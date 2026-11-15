@@ -1,0 +1,83 @@
+/* Muster-CRM · ruhige Arbeitsoberfläche: viel Liste, wenig Schmuck. Flüssig von 320 bis 1920 Pixel. */
+:root {
+  --grund: #f5f4ee; --schrift: #1f2a22; --leise: #56635a; --akzent: #2f5d46; --auf-akzent: #f6f8f2; --flaeche: #fffefb;
+  --linie: color-mix(in srgb, var(--schrift) 14%, transparent); --warn: #a3371f; --marke: #e7efc9;
+  --stufe--1: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem); --stufe-0: clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
+  --stufe-1: clamp(1.25rem, 1.16rem + 0.45vw, 1.5rem); --stufe-2: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem);
+  --raum-2: clamp(0.75rem, 0.68rem + 0.35vw, 1rem); --raum-3: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); --raum-4: clamp(1.75rem, 1.45rem + 1.5vw, 2.75rem); --raum-5: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  --radius: 0.625rem; --rand: clamp(1rem, 0.4rem + 3.4vw, 3rem);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; accent-color: var(--akzent); }
+body { margin: 0; background: var(--grund); color: var(--schrift); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: var(--stufe-0); line-height: 1.55; overflow-wrap: break-word; }
+h1, h2 { margin: 0; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+h1 { font-size: var(--stufe-2); } h2 { font-size: var(--stufe-1); margin-block-end: var(--raum-2); }
+p, ul, ol, dl, dd { margin: 0; } ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+a { color: var(--akzent); text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--akzent); outline-offset: 2px; border-radius: 4px; }
+::selection { background: var(--akzent); color: var(--auf-akzent); }
+.gross { font-size: var(--stufe-1); line-height: 1.4; color: var(--leise); }
+.nur-vorlesen { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.sprung { position: absolute; left: var(--rand); top: -5rem; padding: 0.6rem 1rem; background: var(--schrift); color: var(--grund); border-radius: 0 0 var(--radius) var(--radius); }
+.sprung:focus { top: 0; }
+.rahmen { width: 100%; max-width: 68rem; margin-inline: auto; padding-inline: var(--rand); }
+main.rahmen { padding-block: var(--raum-4) var(--raum-5); }
+main > * + * { margin-block-start: var(--raum-4); }
+.stapel > * + * { margin-block-start: var(--raum-3); }
+.reihe { display: flex; flex-wrap: wrap; gap: var(--raum-2); }
+.schmal { max-width: 32rem; } .schmal > * + * { margin-block-start: var(--raum-3); }
+
+.kopf { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--grund) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--linie); }
+.kopf__innen { display: flex; align-items: center; gap: var(--raum-3); min-height: 4rem; flex-wrap: wrap; padding-block: 0.5rem; }
+.kopf__name { min-width: 0; overflow-wrap: anywhere; display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 700; font-size: var(--stufe-1); letter-spacing: -0.02em; color: var(--schrift); text-decoration: none; margin-inline-end: auto; }
+.kopf__wege { display: flex; flex-wrap: wrap; gap: 0 var(--raum-3); min-width: 0; }
+.kopf__wege a { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--schrift); text-decoration-color: transparent; }
+.kopf__wege a:hover { text-decoration-color: currentColor; }
+@media (max-width: 40rem) { .kopf__innen { gap: 0 var(--raum-3); } .kopf__wege { order: 3; flex-basis: 100%; } }
+
+.knopf { display: inline-flex; align-items: center; justify-content: center; min-height: 2.9rem; padding: 0.5em 1.3em; border: 2px solid var(--akzent); border-radius: var(--radius); background: var(--akzent); color: var(--auf-akzent); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.knopf:hover { transform: translateY(-1px); box-shadow: 0 0.6rem 1.2rem -0.5rem color-mix(in srgb, var(--akzent) 55%, transparent); }
+.knopf--zweit { background: transparent; color: var(--schrift); border-color: var(--linie); } .knopf--zweit:hover { border-color: var(--akzent); box-shadow: none; }
+.knopf--gefahr { background: var(--warn); border-color: var(--warn); }
+.knopf--klein { min-height: 2.75rem; padding: 0.3em 1em; font-size: var(--stufe--1); background: transparent; color: var(--akzent); }
+
+.feld { display: grid; gap: 0.35rem; font-weight: 600; }
+.feld input, .feld textarea, .suche input { width: 100%; min-height: 3rem; padding: 0.6em 0.8em; border: 1.5px solid color-mix(in srgb, var(--schrift) 30%, transparent); border-radius: var(--radius); background: var(--flaeche); color: var(--schrift); font: inherit; font-size: max(1rem, var(--stufe-0)); }
+.hinweis { padding: 0.8em 1em; border-radius: var(--radius); background: color-mix(in srgb, var(--warn) 12%, var(--grund)); color: var(--warn); font-weight: 600; }
+.leer { padding: var(--raum-4); border: 1.5px dashed var(--linie); border-radius: var(--radius); color: var(--leise); text-align: center; }
+.zurueck a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+
+.titelzeile { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--raum-3); }
+.suche { display: flex; gap: var(--raum-2); } .suche input { flex: 1; min-width: 0; }
+.liste { border-top: 1px solid var(--linie); }
+.liste a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.1rem var(--raum-3); align-items: baseline; padding: var(--raum-2) 0.25rem; min-height: 3.5rem; border-bottom: 1px solid var(--linie); color: var(--schrift); text-decoration: none; transition: background-color 0.15s, padding-inline-start 0.2s; }
+.liste a:hover { background: var(--flaeche); padding-inline-start: 0.75rem; }
+.liste__name { font-size: var(--stufe-1); font-weight: 600; letter-spacing: -0.01em; }
+.liste__neben { grid-column: 1; color: var(--leise); }
+.marke { grid-column: 2; grid-row: 1; padding: 0.15em 0.7em; border-radius: 99rem; background: var(--marke); font-size: var(--stufe--1); font-weight: 600; white-space: nowrap; }
+.angaben { display: grid; gap: var(--raum-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); padding-block: var(--raum-3); border-block: 1px solid var(--linie); }
+.angaben dt { font-size: var(--stufe--1); color: var(--leise); } .angaben dd { font-size: var(--stufe-0); font-weight: 600; overflow-wrap: anywhere; }
+.zweispalt { display: grid; gap: var(--raum-4); }
+@media (min-width: 56rem) { .zweispalt { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--raum-5); } }
+.verlauf li { padding-block: var(--raum-2); border-bottom: 1px solid var(--linie); } .verlauf li > * + * { margin-block-start: 0.35rem; }
+.verlauf__am { font-size: var(--stufe--1); color: var(--leise); }
+.verlauf .ist-offen { padding-inline: var(--raum-2); border-radius: var(--radius); background: var(--marke); border-bottom-color: transparent; margin-block-end: 0.5rem; }
+.verlauf--breit { max-width: 44rem; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+/* Ergänzungen der Grundlage: Auswahlfelder, Stufenfilter, Verwalten, Einlesen */
+.feld select { width: 100%; min-height: 3rem; padding: 0.6em 0.8em; border: 1.5px solid color-mix(in srgb, var(--schrift) 30%, transparent); border-radius: var(--radius); background: var(--flaeche); color: var(--schrift); font: inherit; font-size: max(1rem, var(--stufe-0)); }
+.feld textarea { resize: vertical; }
+.mittel { max-width: 44rem; }
+.filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-block-start: var(--raum-3); }
+.filter a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.2em 1em; border: 1.5px solid var(--linie); border-radius: 99rem; color: var(--schrift); text-decoration: none; font-size: var(--stufe--1); font-weight: 600; }
+.filter a:hover { border-color: var(--akzent); }
+.filter a[aria-current] { background: var(--akzent); border-color: var(--akzent); color: var(--auf-akzent); }
+.angaben__breit { grid-column: 1 / -1; } .angaben__breit dd { font-size: var(--stufe-0); font-weight: 400; white-space: pre-line; }
+.verlauf__text { white-space: pre-line; }
+.zugaenge { border-top: 1px solid var(--linie); }
+.zugaenge li { display: flex; align-items: center; justify-content: space-between; gap: var(--raum-2); min-height: 3.5rem; border-bottom: 1px solid var(--linie); font-weight: 600; }
+.fuss-wege { display: flex; flex-wrap: wrap; gap: var(--raum-2) var(--raum-4); padding-block-start: var(--raum-3); border-top: 1px solid var(--linie); font-size: var(--stufe--1); }
+.fuss-wege a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.stapel > h2:not(:first-child) { margin-block-start: var(--raum-4); }
+.klein { font-size: var(--stufe--1); color: var(--leise); max-width: 34rem; }

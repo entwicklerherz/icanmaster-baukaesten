@@ -1,0 +1,172 @@
+[
+ {
+  "datei": "cafe.webp",
+  "klein": "cafe-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 211,
+  "passt": "Café, Bäckerei, Restaurant, Bistro, Eisdiele, Feinkost",
+  "komposition": "buehne",
+  "stillleben": "genuss.webp",
+  "alt": "Aquarell: Bistrotisch am Fenster mit Kaffee, Kuchen und Croissant, draußen eine Altstadtgasse",
+  "farben": [
+   "#614425",
+   "#9e6a38",
+   "#c89d66",
+   "#d4b58b",
+   "#f0d09d",
+   "#dfd5c6"
+  ]
+ },
+ {
+  "datei": "garten.webp",
+  "klein": "garten-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 276,
+  "passt": "Gärtnerei, Blumenladen, Hofladen, Garten- und Landschaftsbau",
+  "komposition": "buehne (Laden) oder werkbank (Arbeit beim Kunden)",
+  "stillleben": "garten.webp",
+  "alt": "Aquarell: Gewächshaus mit Kräutern in Tontöpfen, Schnittblumen, Gießkanne und Gartenschere",
+  "farben": [
+   "#575a33",
+   "#966c2e",
+   "#758762",
+   "#b29f59",
+   "#a8b497",
+   "#cecdac"
+  ]
+ },
+ {
+  "datei": "verein.webp",
+  "klein": "verein-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 257,
+  "passt": "Sportverein, Jugendarbeit, Ehrenamt, Gemeinschaft",
+  "komposition": "buehne",
+  "stillleben": "verein.webp",
+  "alt": "Aquarell: Vereinsheim aus Holz am Sportplatz, davor Ball und Hütchen im Morgenlicht",
+  "farben": [
+   "#52522c",
+   "#a0672d",
+   "#728946",
+   "#b7a74e",
+   "#788980",
+   "#e6dec6"
+  ]
+ },
+ {
+  "datei": "tischlerei.webp",
+  "klein": "tischlerei-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 281,
+  "passt": "Tischlerei, Schreinerei, Zimmerei, Restaurierung, Handwerk mit Holz",
+  "komposition": "werkbank",
+  "stillleben": "holz.webp",
+  "alt": "Aquarell: Hobelbank mit Hobel und Spänen, Stechbeitel an der Wand, Licht fällt durch das Werkstattfenster",
+  "farben": [
+   "#60472a",
+   "#99612b",
+   "#987549",
+   "#7b8577",
+   "#bd9a5f",
+   "#cabf9b"
+  ]
+ },
+ {
+  "datei": "werkstatt.webp",
+  "klein": "werkstatt-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 276,
+  "passt": "Fahrradwerkstatt, Reparatur, Kfz, Elektro, Hausmeisterdienst, Installation",
+  "komposition": "werkbank",
+  "stillleben": "werkstatt.webp",
+  "alt": "Aquarell: Werkstatt mit Fahrrad am Montageständer, Werkbank mit Schraubstock und Werkzeugwand",
+  "farben": [
+   "#47504c",
+   "#727667",
+   "#b59a62",
+   "#a9ab9b",
+   "#ddd0ae",
+   "#d8cfb1"
+  ]
+ },
+ {
+  "datei": "praxis.webp",
+  "klein": "praxis-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 219,
+  "passt": "Physiotherapie, Ergotherapie, Training, Yoga, Heilpraxis",
+  "komposition": "ruhe",
+  "stillleben": "bewegung.webp",
+  "alt": "Aquarell: heller Behandlungsraum mit Liege, Gymnastikball, Sprossenwand und Zimmerpflanze",
+  "farben": [
+   "#446147",
+   "#718967",
+   "#b4a167",
+   "#b1b69d",
+   "#ded1ad",
+   "#e4dfcc"
+  ]
+ },
+ {
+  "datei": "pflege.webp",
+  "klein": "pflege-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 206,
+  "passt": "Massage, Kosmetik, Wellness, Fußpflege, Friseur, Naturheilpraxis",
+  "komposition": "ruhe",
+  "stillleben": "pflege.webp",
+  "alt": "Aquarell: ruhiger Behandlungsraum mit Liege, Leinentüchern, Ölflasche, Steinen und Lavendel",
+  "farben": [
+   "#8e7256",
+   "#af9e97",
+   "#cab6a3",
+   "#decbb4",
+   "#ebdecb"
+  ]
+ },
+ {
+  "datei": "buero.webp",
+  "klein": "buero-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 239,
+  "passt": "Beratung, Kanzlei, Steuerbüro, Coaching, Text und Übersetzung",
+  "komposition": "ruhe",
+  "stillleben": "schreibtisch.webp",
+  "alt": "Aquarell: Besprechungsraum mit zwei Sesseln, Bücherregal und Schreibtisch mit Notizbuch und Tee",
+  "farben": [
+   "#564638",
+   "#757b71",
+   "#9b6b3d",
+   "#bd9763",
+   "#cbb69b",
+   "#d6c7ad"
+  ]
+ },
+ {
+  "datei": "lernen.webp",
+  "klein": "lernen-klein.webp",
+  "breite": 1600,
+  "hoehe": 1067,
+  "kb": 213,
+  "passt": "Nachhilfe, Musikunterricht, Kurse, Sprachschule",
+  "komposition": "ruhe",
+  "stillleben": "lernen.webp",
+  "alt": "Aquarell: heller Unterrichtsraum mit Klavier, Tisch mit Büchern und Heft, Globus am Fenster",
+  "farben": [
+   "#4c5042",
+   "#956f35",
+   "#c0a265",
+   "#cbba90",
+   "#e2cd9e",
+   "#c3c0a5"
+  ]
+ }
+]

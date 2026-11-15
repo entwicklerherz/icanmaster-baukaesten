@@ -1,0 +1,169 @@
+[
+ {
+  "datei": "bewegung.webp",
+  "klein": "bewegung-klein.webp",
+  "breite": 1400,
+  "hoehe": 992,
+  "kb": 217,
+  "passt": "Physiotherapie, Training, Yoga, Gesundheit in Bewegung",
+  "farben": [
+   "#878852",
+   "#6a9f92",
+   "#adc3ab",
+   "#e6e8d5"
+  ]
+ },
+ {
+  "datei": "pflege.webp",
+  "klein": "pflege-klein.webp",
+  "breite": 1398,
+  "hoehe": 1022,
+  "kb": 194,
+  "passt": "Massage, Kosmetik, Wellness, Pflege, Heilpraxis",
+  "farben": [
+   "#4c4440",
+   "#a47948",
+   "#c2b8a8",
+   "#ede6d8"
+  ]
+ },
+ {
+  "datei": "holz.webp",
+  "klein": "holz-klein.webp",
+  "breite": 1400,
+  "hoehe": 994,
+  "kb": 222,
+  "passt": "Tischlerei, Schreinerei, Handwerk mit Holz, Restaurierung",
+  "farben": [
+   "#5e4533",
+   "#9c6a36",
+   "#ddac54",
+   "#d9cdbb"
+  ]
+ },
+ {
+  "datei": "werkstatt.webp",
+  "klein": "werkstatt-klein.webp",
+  "breite": 1400,
+  "hoehe": 960,
+  "kb": 220,
+  "passt": "Reparatur, Fahrrad, Kfz, Elektro, Technik, Hausmeister",
+  "farben": [
+   "#53504b",
+   "#877865",
+   "#b39665",
+   "#c8c4b7"
+  ]
+ },
+ {
+  "datei": "genuss.webp",
+  "klein": "genuss-klein.webp",
+  "breite": 1400,
+  "hoehe": 948,
+  "kb": 239,
+  "passt": "Café, Bäckerei, Restaurant, Feinkost, Catering",
+  "farben": [
+   "#9f5428",
+   "#e09f4f",
+   "#e2d3be"
+  ]
+ },
+ {
+  "datei": "garten.webp",
+  "klein": "garten-klein.webp",
+  "breite": 1400,
+  "hoehe": 1009,
+  "kb": 208,
+  "passt": "Gärtnerei, Floristik, Landschaftsbau, Hofladen",
+  "farben": [
+   "#655a3b",
+   "#a36d3c",
+   "#c69f57",
+   "#dcd2c3"
+  ]
+ },
+ {
+  "datei": "schreibtisch.webp",
+  "klein": "schreibtisch-klein.webp",
+  "breite": 1400,
+  "hoehe": 1001,
+  "kb": 189,
+  "passt": "Beratung, Kanzlei, Steuerbüro, Coaching, Text und Übersetzung",
+  "farben": [
+   "#a58964",
+   "#bfb29f",
+   "#edd4ad",
+   "#efe5d3"
+  ]
+ },
+ {
+  "datei": "lernen.webp",
+  "klein": "lernen-klein.webp",
+  "breite": 1400,
+  "hoehe": 961,
+  "kb": 200,
+  "passt": "Nachhilfe, Musikunterricht, Kurse, Schule, Verein mit Bildungsangebot",
+  "farben": [
+   "#605941",
+   "#94744a",
+   "#bea359",
+   "#e1dcc0"
+  ]
+ },
+ {
+  "datei": "verein.webp",
+  "klein": "verein-klein.webp",
+  "breite": 1396,
+  "hoehe": 1022,
+  "kb": 228,
+  "passt": "Sportverein, Jugendarbeit, Ehrenamt, Gemeinschaft",
+  "farben": [
+   "#5f4739",
+   "#b9603b",
+   "#d0995b",
+   "#d4c6b7"
+  ]
+ },
+ {
+  "datei": "lavierung-warm.webp",
+  "klein": "lavierung-warm-klein.webp",
+  "breite": 1370,
+  "hoehe": 1021,
+  "kb": 219,
+  "passt": "Hintergrundfläche, warm",
+  "farben": [
+   "#fabba9",
+   "#fac48a",
+   "#fbd3aa",
+   "#fde4d4"
+  ]
+ },
+ {
+  "datei": "lavierung-kuehl.webp",
+  "klein": "lavierung-kuehl-klein.webp",
+  "breite": 1400,
+  "hoehe": 984,
+  "kb": 214,
+  "passt": "Hintergrundfläche, kühl",
+  "farben": [
+   "#e6efe9",
+   "#bcd0cd",
+   "#b6cecf",
+   "#dde9e4"
+  ]
+ },
+ {
+  "datei": "lavierung-gruen.webp",
+  "klein": "lavierung-gruen-klein.webp",
+  "breite": 1400,
+  "hoehe": 1012,
+  "kb": 185,
+  "passt": "Hintergrundfläche, natürlich",
+  "farben": [
+   "#d5c46c",
+   "#8fb080",
+   "#e6dda3",
+   "#dbe3c4"
+  ]
+ }
+]

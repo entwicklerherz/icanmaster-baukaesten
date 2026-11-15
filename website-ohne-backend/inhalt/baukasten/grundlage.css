@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Grundlage des Baukastens „Website ohne Backend“ · 0.5.0
+   Gerüst und fertig gestaltete Bausteine für eine Landingpage. Drei Kompositionen,
+   je nach Aufgabe der Besucher: „buehne“ (Laden und Gastronomie), „werkbank“
+   (Handwerk), „ruhe“ (Praxis, Beratung, Termin). Alles flüssig von 320 bis 1920
+   Pixel. Charakter bekommt die Seite aus dem Gestaltungsplan (die Variablen direkt
+   hier unten), aus Schrift und Bild.
+   ========================================================================== */
+
+:root {
+  /* --- Gestaltungsplan: für jedes Vorhaben neu setzen ----------------------- */
+  --grund: #ffffff;          /* Hintergrund der Seite, hell */
+  --schrift: #111111;        /* Textfarbe, Kontrast zu --grund mindestens 7:1 */
+  --akzent: #444444;         /* Aktionen und Auszeichnung, mindestens 4.5:1 zu --grund und zu --flaeche */
+  --auf-akzent: #ffffff;     /* Text auf Akzentflächen */
+  --flaeche: #f2f2f2;        /* zweite, etwas dunklere Fläche */
+  --karte: #ffffff;          /* hellste Fläche, für die Faktenleiste */
+  --tief: #222222;           /* dunkles Band (Kontakt), Kontrast zu --auf-tief mindestens 7:1 */
+  --auf-tief: #f5f5f5;       /* Text auf dem dunklen Band */
+  --gegen: #888888;          /* Gegenton aus dem Bild: Unterstreichungen, „heute“, kleine Zeichen. Nie für Text auf hellem Grund */
+  --familie-titel: Georgia, serif;
+  --familie-text: system-ui, sans-serif;
+  --titel-gewicht: 400;
+  --titel-laufweite: -0.03em;
+  --titel-hoehe: 1;
+  --titel-zeichen: 14;       /* Zeichen der längsten Zeile der Hauptüberschrift, Leerzeichen mitgezählt */
+  --titel-breite: 0.56;      /* mittlere Buchstabenbreite der Titelschrift, siehe schriften/LIES-MICH.md */
+  --radius: 0.625rem;
+  --radius-gross: 1.5rem;
+
+  /* --- Abgeleitet ------------------------------------------------------------ */
+  --leise: color-mix(in srgb, var(--schrift) 74%, var(--grund));
+  --linie: color-mix(in srgb, var(--schrift) 14%, transparent);
+  --schatten: 0 2rem 4rem -2.25rem color-mix(in srgb, var(--schrift) 45%, transparent), 0 0.25rem 0.75rem -0.5rem color-mix(in srgb, var(--schrift) 18%, transparent);
+
+  /* --- Maße: flüssig von 320 bis 1920 Pixel, ohne Sprünge -------------------- */
+  --stufe--1: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
+  --stufe-0: clamp(1.0625rem, 1.02rem + 0.22vw, 1.1875rem);
+  --stufe-1: clamp(1.25rem, 1.16rem + 0.45vw, 1.5rem);
+  --stufe-2: clamp(1.5rem, 1.3rem + 1vw, 2.125rem);
+  --stufe-3: clamp(2rem, 1.5rem + 2.4vw, 3.5rem);
+  --stufe-4: clamp(2.25rem, 1.4rem + 4.2vw, 5rem);
+
+  --raum-1: clamp(0.5rem, 0.45rem + 0.2vw, 0.625rem);
+  --raum-2: clamp(0.75rem, 0.68rem + 0.35vw, 1rem);
+  --raum-3: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+  --raum-4: clamp(1.75rem, 1.45rem + 1.5vw, 2.75rem);
+  --raum-5: clamp(2.75rem, 2rem + 3.6vw, 5rem);
+  --raum-6: clamp(4.5rem, 3rem + 7vw, 9.5rem);
+
+  --rahmen: 80rem;
+  --rand: clamp(1.25rem, 0.4rem + 4.2vw, 4.5rem);
+  --spalt: clamp(1.25rem, 0.6rem + 3vw, 4rem);
+  --mass: 60ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: clamp(100%, 75% + 0.39vw, 118.75%);   /* auf großen Bildschirmen wächst alles mit */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 6rem;
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+body {
+  margin: 0;
+  background: var(--grund);
+  color: var(--schrift);
+  font-family: var(--familie-text);
+  font-size: var(--stufe-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  overflow-x: clip;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--familie-titel);
+  font-weight: var(--titel-gewicht);
+  letter-spacing: var(--titel-laufweite);
+  line-height: var(--titel-hoehe);
+  text-wrap: balance;
+  hyphens: auto;               /* nur lange deutsche Wörter werden auf schmalen Bildschirmen getrennt */
+  hyphenate-limit-chars: 13 5 5;
+  -webkit-hyphenate-limit-before: 5;
+  -webkit-hyphenate-limit-after: 5;
+  overflow-wrap: break-word;
+}
+h1 { font-size: var(--stufe-4); }
+h2 { font-size: var(--stufe-3); line-height: 1.04; }
+h3 { font-size: var(--stufe-2); line-height: 1.12; letter-spacing: -0.02em; }
+
+p, ul, ol, dl, dd, address, figure { margin: 0; }
+p, li, dd { max-width: var(--mass); text-wrap: pretty; }
+address { font-style: normal; }
+em, i { font-style: normal; font-weight: 600; }
+ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration-line: underline; text-decoration-color: var(--gegen); text-decoration-thickness: 0.09em; text-underline-offset: 0.22em; transition: text-decoration-color 0.2s, color 0.2s; }
+a:hover { text-decoration-color: currentColor; }
+:focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--akzent); color: var(--auf-akzent); }
+
+/* --- Hilfen -------------------------------------------------------------------- */
+.gross { font-size: var(--stufe-1); line-height: 1.45; }
+.klein { font-size: var(--stufe--1); line-height: 1.5; }
+.leise { color: var(--leise); }
+.ziffern { font-variant-numeric: tabular-nums lining-nums; }
+.kein-umbruch { white-space: nowrap; }
+.nur-vorlesen { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.sprung { position: absolute; left: var(--rand); top: -6rem; z-index: 40; display: inline-flex; align-items: center; min-height: 3rem; padding: 0 1.25rem; border-radius: 0 0 var(--radius) var(--radius); background: var(--schrift); color: var(--grund); text-decoration: none; }
+.sprung:focus { top: 0; }
+
+/* --- Aufbau ---------------------------------------------------------------------- */
+.rahmen { width: 100%; max-width: calc(var(--rahmen) + 2 * var(--rand)); margin-inline: auto; padding-inline: var(--rand); }
+.abschnitt { padding-block: var(--raum-6); }
+.abschnitt--flaeche { background: var(--flaeche); }
+.stapel > * + * { margin-block-start: var(--abstand, var(--raum-3)); }
+/* Zwölf Spalten ab mittlerer Breite; darunter steht alles untereinander. Platziere Kinder in deinen eigenen Klassen mit --von und --bis. */
+.raster { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--raum-4) var(--spalt); align-items: start; }
+@media (min-width: 56rem) {
+  .raster { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .raster > * { grid-column: var(--von, 1) / var(--bis, 13); }
+}
+
+/* --- Aktionen -------------------------------------------------------------------- */
+.knopf { display: inline-flex; align-items: center; justify-content: center; gap: 0.6em; min-height: 3.25rem; padding: 0.6em 1.5em; border: 2px solid var(--akzent); border-radius: var(--radius); background: var(--akzent); color: var(--auf-akzent); font-weight: 600; text-decoration: none; transition: background-color 0.2s, color 0.2s, transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.25s; }
+.knopf:hover { transform: translateY(-2px); box-shadow: 0 0.9rem 1.6rem -0.6rem color-mix(in srgb, var(--akzent) 55%, transparent); }
+.knopf:active { transform: none; box-shadow: none; }
+.knopf--zweit { background: transparent; color: var(--schrift); border-color: var(--linie); }
+.knopf--zweit:hover { border-color: var(--akzent); box-shadow: none; }
+/* Anruf-Schaltfläche: kleine Zeile, darunter die Nummer groß. Die wichtigste Aktion der Seite. */
+.ruf { display: inline-grid; gap: 0.1em; padding: 0.7em 1.6em 0.75em; border-radius: var(--radius); background: var(--akzent); color: var(--auf-akzent); text-decoration: none; transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.25s; }
+.ruf:hover { transform: translateY(-2px); box-shadow: 0 1rem 1.8rem -0.7rem color-mix(in srgb, var(--akzent) 60%, transparent); }
+.ruf__wort { font-size: var(--stufe--1); font-weight: 500; opacity: 0.86; }
+.ruf__nummer { font-family: var(--familie-titel); font-size: var(--stufe-2); font-weight: var(--titel-gewicht); letter-spacing: -0.01em; line-height: 1.1; font-variant-numeric: lining-nums; white-space: nowrap; }
+@media (max-width: 30rem) { .knopf, .ruf { width: 100%; } }
+
+/* --- Kopfzeile: bleibt oben, wird durchscheinend ----------------------------------- */
+.kopf { position: sticky; top: 0; z-index: 30; background: color-mix(in srgb, var(--grund) 82%, transparent); -webkit-backdrop-filter: blur(16px) saturate(1.3); backdrop-filter: blur(16px) saturate(1.3); border-bottom: 1px solid var(--linie); }
+.kopf__innen { display: flex; align-items: center; justify-content: space-between; gap: var(--raum-3); min-height: 4.25rem; }
+.kopf__name { display: inline-flex; align-items: center; min-height: 2.75rem; font-family: var(--familie-titel); font-weight: var(--titel-gewicht); font-size: var(--stufe-1); letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
+.kopf__name img { max-height: 2.5rem; width: auto; }
+.kopf__wege { display: none; gap: var(--raum-3); margin-inline-start: auto; }
+.kopf__wege a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration-color: transparent; }
+.kopf__wege a:hover { text-decoration-color: var(--gegen); }
+.kopf__ruf { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 1.1em; border: 1.5px solid var(--schrift); border-radius: 999px; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; text-decoration: none; white-space: nowrap; transition: background-color 0.2s, color 0.2s; }
+.kopf__ruf:hover { background: var(--schrift); color: var(--grund); }
+@media (min-width: 48rem) { .kopf__wege { display: flex; } }
+@media (max-width: 26rem) { .kopf__innen { gap: var(--raum-1); } .kopf__name { font-size: var(--stufe-0); white-space: normal; line-height: 1.15; } .kopf__ruf { padding: 0 0.8em; font-size: var(--stufe--1); } }
+
+
+
+/* --- Browserflächen gehören zur Gestaltung ---------------------------------------- */
+html { scrollbar-color: color-mix(in srgb, var(--schrift) 35%, var(--grund)) var(--grund); accent-color: var(--akzent); caret-color: var(--akzent); }
+.abschnitt { padding-block: var(--raum-6); }
+h2 + p, h2 + .gross { margin-block-start: var(--raum-3); }
+
+/* --- Überschrift, die ihre Spalte füllt -------------------------------------------- */
+.titel-raum { container-type: inline-size; }
+.titel { font-size: clamp(2.125rem, calc(100cqi / (var(--titel-zeichen) * var(--titel-breite))), 7rem); line-height: 0.98; hyphens: manual; }
+.titel span { display: block; white-space: nowrap; }
+
+/* --- Status „heute geöffnet“ --------------------------------------------------------- */
+.status { display: inline-flex; align-items: center; gap: 0.55em; min-height: 2.25rem; padding: 0.2em 0.95em 0.2em 0.8em; border-radius: 99rem; background: color-mix(in srgb, var(--karte) 86%, transparent); box-shadow: inset 0 0 0 1px var(--linie); font-size: var(--stufe--1); font-weight: 600; white-space: nowrap; }
+.status::before { content: ""; width: 0.6em; height: 0.6em; border-radius: 50%; background: var(--leise); }
+.status.ist-offen::before { background: #2f8f5b; box-shadow: 0 0 0 0.28em color-mix(in srgb, #2f8f5b 22%, transparent); }
+.status.ist-zu::before { background: var(--akzent); }
+
+/* ==========================================================================
+   LADEN UND GASTRONOMIE · „Bühne“: das Bild ist der Raum, der Text steht darin
+   ========================================================================== */
+.buehne { position: relative; isolation: isolate; overflow: clip; }
+.buehne__bild { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 74% 55%; }
+.buehne__text { max-width: 40rem; padding-block: var(--raum-4) var(--raum-5); }
+.buehne__text > * + * { margin-block-start: var(--raum-3); }
+.buehne__aktion { display: flex; flex-wrap: wrap; align-items: center; gap: var(--raum-2) var(--raum-3); margin-block-start: var(--raum-4); }
+@media (max-width: 55.99rem) {
+  .buehne__bild { -webkit-mask-image: linear-gradient(#000 80%, transparent); mask-image: linear-gradient(#000 80%, transparent); margin-block-end: calc(var(--raum-3) * -1); }
+  .buehne__text { position: relative; }
+}
+@media (min-width: 56rem) {
+  .buehne { display: grid; align-items: center; min-height: min(80svh, 46rem); }
+  .buehne__bild { position: absolute; inset: 0; z-index: -2; height: 100%; aspect-ratio: auto; object-position: 100% 62%; }
+  .buehne::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--grund) 0%, var(--grund) 30%, color-mix(in srgb, var(--grund) 90%, transparent) 44%, color-mix(in srgb, var(--grund) 45%, transparent) 56%, transparent 70%); }
+  .buehne::after { content: ""; position: absolute; inset: auto 0 0; z-index: -1; height: 22%; background: linear-gradient(transparent, var(--grund)); }
+  .buehne__text { width: min(46%, 38rem); padding-block: var(--raum-5) calc(var(--raum-5) + var(--raum-4)); }
+}
+
+/* Auskunftsleiste: das Wichtigste in einer Zeile, schwebt halb über dem Bild */
+.auskunft { position: relative; z-index: 2; display: grid; gap: 1px; overflow: hidden; border-radius: var(--radius-gross); background: var(--linie); box-shadow: var(--schatten); }
+.auskunft > div { padding: var(--raum-3) var(--raum-4); background: var(--karte); }
+.auskunft dt { font-size: var(--stufe--1); color: var(--leise); }
+.auskunft dd { overflow-wrap: anywhere; font-size: var(--stufe-1); font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
+.auskunft a { text-decoration-color: transparent; }
+.auskunft a:hover { text-decoration-color: var(--gegen); }
+@media (min-width: 56rem) { .auskunft { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); margin-block-start: calc(var(--raum-5) * -1); } }
+
+/* Tafel: das Angebot groß gesetzt wie auf der Kreidetafel; links der Name, rechts die Worte dazu */
+.tafel { display: grid; }
+.tafel li { display: grid; gap: 0.25em var(--raum-4); align-items: baseline; max-width: none; padding-block: var(--raum-3); border-block-end: 1px solid var(--linie); }
+.tafel li:first-child { border-block-start: 1px solid var(--linie); }
+.tafel h3 { font-size: var(--stufe-3); line-height: 1; }
+.tafel p { font-size: var(--stufe-1); line-height: 1.35; }
+@media (min-width: 40rem) { .tafel li { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .tafel p { text-align: end; justify-self: end; } }
+.angebot__bild { width: min(86%, 26rem); margin-inline: auto; }
+@media (min-width: 56rem) {
+  .angebot__kopf { --von: 1; --bis: 8; }
+  .angebot__bild { --von: 9; --bis: 13; grid-row: 1 / span 2; width: 100%; align-self: center; rotate: 2deg; }
+  .angebot .tafel { --von: 1; --bis: 9; }
+}
+
+/* Zeiten als ruhige Liste; der heutige Tag wird hervorgehoben, sobald das Skript läuft */
+.zeiten { display: grid; font-size: var(--stufe-1); line-height: 1.35; }
+.zeiten > div { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.2em var(--raum-3); padding-block: 0.75em; border-block-end: 1px solid var(--linie); }
+.zeiten > div:first-child { border-block-start: 1px solid var(--linie); }
+.zeiten dt { font-weight: 600; }
+.zeiten dd { font-variant-numeric: tabular-nums lining-nums; text-align: end; }
+.zeiten .ist-heute dt::after { content: "heute"; margin-inline-start: 0.6em; padding: 0.2em 0.7em; border-radius: 99rem; background: var(--gegen); color: var(--schrift); font-size: var(--stufe--1); font-weight: 600; vertical-align: 0.1em; }
+.ort { font-size: var(--stufe-1); line-height: 1.4; }
+.ort strong { font-weight: 600; }
+
+/* ==========================================================================
+   HANDWERK · „Werkbank“: Überschrift über die ganze Breite, darunter das Bild als breites Band
+   ========================================================================== */
+.werkbank { padding-block: var(--raum-4) 0; }
+.werkbank__kopf { display: grid; gap: var(--raum-4) var(--spalt); align-items: start; }
+.werkbank__seite > * + * { margin-block-start: var(--raum-3); }
+.werkbank__bild { position: relative; margin-block-start: var(--raum-4); }
+.werkbank__bild img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 62% 60%; border-radius: var(--radius-gross); }
+.plakette { display: grid; gap: 0.15em; padding: var(--raum-3) var(--raum-4); border-radius: var(--radius-gross); background: var(--tief); color: var(--auf-tief); }
+.plakette strong { font-family: var(--familie-titel); font-size: var(--stufe-2); font-weight: var(--titel-gewicht); letter-spacing: var(--titel-laufweite); line-height: 1.1; }
+.plakette span { color: color-mix(in srgb, var(--auf-tief) 88%, var(--tief)); }
+@media (max-width: 55.99rem) { .plakette { margin-block-start: var(--raum-2); } }
+@media (min-width: 56rem) {
+  .werkbank__kopf { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); }
+  .werkbank__seite { padding-block-start: 0.5rem; }
+  .werkbank__bild img { aspect-ratio: 21 / 9; object-position: 50% 62%; }
+  .plakette { position: absolute; left: var(--raum-4); bottom: calc(var(--raum-4) * -1); min-width: 21rem; box-shadow: var(--schatten); }
+}
+
+/* Werkliste: links steht, worum es geht, rechts jedes Werk groß mit einer Zeile dazu */
+.werke { display: grid; gap: var(--raum-4) var(--spalt); }
+.werke__liste li { display: grid; gap: 0.35em var(--raum-4); max-width: none; padding-block: var(--raum-3); border-block-start: 2px solid var(--schrift); }
+.werke__liste h3 { font-size: var(--stufe-3); line-height: 1; }
+.werke__liste p { font-size: var(--stufe-1); line-height: 1.4; }
+@media (min-width: 56rem) {
+  .werke { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+  .werke__kopf { position: sticky; top: 7rem; align-self: start; }
+  .werke__liste li { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: baseline; padding-block: var(--raum-4); }
+}
+
+/* Aussage: ein Satz des Nutzers groß, daneben das Material als Bild; steht auf hellem Grund, nie auf der dunkleren Fläche */
+.aussage-band { padding-block: var(--raum-5); border-block: 1px solid var(--linie); }
+.aussage { display: grid; gap: var(--raum-3) var(--spalt); align-items: center; }
+.aussage p { max-width: 20ch; font-family: var(--familie-titel); font-weight: var(--titel-gewicht); font-size: var(--stufe-3); line-height: 1.04; letter-spacing: var(--titel-laufweite); text-wrap: balance; }
+.aussage img { width: min(100%, 22rem); margin-inline: auto; }
+@media (min-width: 56rem) { .aussage { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+
+/* ==========================================================================
+   PRAXIS UND TERMIN · „Ruhe“: Text links, das Bild rechts wie ein hohes Fenster
+   ========================================================================== */
+.ruhe { padding-block: var(--raum-5) var(--raum-6); }
+.ruhe__raster { display: grid; gap: var(--raum-4) var(--spalt); align-items: center; }
+.ruhe__text > * + * { margin-block-start: var(--raum-3); }
+.ruhe__aktion { display: flex; flex-wrap: wrap; align-items: center; gap: var(--raum-2) var(--raum-3); margin-block-start: var(--raum-4); }
+.ruhe__fenster { position: relative; }
+.ruhe__fenster img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 70% 50%; border-radius: 99rem 99rem var(--radius-gross) var(--radius-gross); }
+.ruhe__notiz { margin-block-start: var(--raum-3); padding-inline-start: var(--raum-3); border-inline-start: 1px solid var(--linie); font-size: var(--stufe-1); line-height: 1.4; }
+@media (max-width: 55.99rem) { .ruhe__fenster { order: -1; width: min(86%, 24rem); margin-inline: auto; } .ruhe__fenster img { aspect-ratio: 5 / 4; } }
+@media (min-width: 56rem) { .ruhe__raster { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+
+/* Behandlungen: Name links, Erklärung rechts, viel Luft */
+.behandlungen li { display: grid; gap: 0.3em var(--spalt); max-width: none; padding-block: var(--raum-3); border-block-end: 1px solid var(--linie); }
+.behandlungen li:first-child { border-block-start: 1px solid var(--linie); }
+.behandlungen h3 { font-size: var(--stufe-2); }
+.behandlungen p { font-size: var(--stufe-1); line-height: 1.4; }
+@media (min-width: 48rem) { .behandlungen li { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: baseline; padding-block: var(--raum-4); } }
+.kopfzeile-abschnitt { display: grid; gap: var(--raum-3) var(--spalt); align-items: end; margin-block-end: var(--raum-5); }
+@media (min-width: 56rem) { .kopfzeile-abschnitt { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+.werke__liste h3 { font-size: clamp(1.75rem, 1.2rem + 1.9vw, 2.75rem); hyphens: manual; }
+@media (min-width: 56rem) { .werke__liste li { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+
+/* --- Fotos des Nutzers: zwei bis sechs eigene Bilder, das erste groß. Nur mit eigenen Fotos, nie mit Bildern des Baukastens ---- */
+.galerie { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--raum-2); margin-block-start: var(--raum-4); }
+.galerie li { max-width: none; }
+.galerie img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-gross); }
+.galerie figcaption { margin-block-start: 0.5em; font-size: var(--stufe--1); color: var(--leise); }
+.galerie:has(li:nth-child(3)) li:first-child { grid-column: 1 / -1; }
+.galerie:has(li:nth-child(3)) li:first-child img { aspect-ratio: 16 / 9; }
+@media (min-width: 56rem) {
+  .galerie { gap: var(--raum-3); }
+  .galerie:has(li:nth-child(3)) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .galerie:has(li:nth-child(3)) li:first-child { grid-column: auto; }
+  .galerie:has(li:nth-child(3)) li:first-child img { aspect-ratio: 4 / 3; }
+  .galerie:has(li:nth-child(4)) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .galerie:has(li:nth-child(4)) li:first-child { grid-column: span 2; grid-row: span 2; }
+  .galerie:has(li:nth-child(4)) li:first-child img { height: 100%; aspect-ratio: auto; }
+  .galerie:has(li:nth-child(6)) li:nth-child(6) { grid-column: span 2; }
+  .galerie:has(li:nth-child(6)) li:nth-child(6) img { aspect-ratio: 8 / 3; }
+}
+
+/* --- Gut zu wissen: zwei bis vier Dinge, die Besucher vorher wissen müssen; nur mit Angaben des Nutzers ---- */
+.wissen { display: grid; gap: var(--raum-4) var(--spalt); }
+.wissen dl { display: grid; gap: 0 var(--spalt); }
+.wissen dl > div { padding-block: var(--raum-3); border-block-start: 1px solid var(--linie); }
+.wissen dt { font-family: var(--familie-titel); font-weight: var(--titel-gewicht); font-size: var(--stufe-2); line-height: 1.1; letter-spacing: -0.02em; }
+.wissen dd { margin-block-start: 0.4em; font-size: var(--stufe-1); line-height: 1.4; }
+@media (min-width: 40rem) { .wissen dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 56rem) { .wissen { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+
+/* --- Schluss: Kontakt, Zeiten und Weg in einem dunklen Abschnitt ---------------------- */
+.band { position: relative; isolation: isolate; overflow: clip; background: var(--tief); color: var(--auf-tief); --linie: color-mix(in srgb, var(--auf-tief) 24%, transparent); }
+.band :focus-visible { outline-color: var(--auf-tief); }
+.band__raster { display: grid; gap: var(--raum-5) var(--spalt); align-items: start; }
+.band__ruf > * + * { margin-block-start: var(--raum-3); }
+.band__nummer { display: inline-block; font-family: var(--familie-titel); font-weight: var(--titel-gewicht); font-size: clamp(2.25rem, 1.2rem + 4.6vw, 4.75rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: lining-nums; white-space: nowrap; text-decoration-thickness: 0.05em; text-underline-offset: 0.16em; }
+.band__weg > * + * { margin-block-start: var(--raum-4); }
+.band a:not(.band__nummer):not(.knopf) { display: inline-flex; align-items: center; min-height: 2.75rem; overflow-wrap: anywhere; }
+.band .knopf--zweit { color: var(--auf-tief); border-color: var(--linie); }
+.band .knopf--zweit:hover { border-color: var(--auf-tief); }
+.band .zeiten .ist-heute dt::after { color: var(--tief); }
+@media (min-width: 56rem) { .band__raster { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+
+/* --- Fußzeile ------------------------------------------------------------------------ */
+.fuss { padding-block: var(--raum-4); }
+.fuss__innen { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--raum-2) var(--raum-4); }
+.fuss a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.fuss__wege { display: flex; flex-wrap: wrap; gap: 0 var(--raum-3); }
+
+/* --- Lesesatz für Impressum und Datenschutz ---------------------------------------- */
+.lesen { max-width: 44rem; }
+.lesen h1 { font-size: var(--stufe-3); margin-block-end: var(--raum-4); }
+.lesen h2 { font-size: var(--stufe-2); margin-block: var(--raum-5) var(--raum-2); }
+.lesen p + p, .lesen ul, .lesen address { margin-block-start: var(--raum-2); }
+.luecke { padding: 0.1em 0.35em; border-radius: 0.3em; background: color-mix(in srgb, var(--gegen) 35%, transparent); }
+
+/* --- Bewegung: lebendig beim Laden und beim Scrollen, nie unruhig ----------------- */
+@property --bluete { syntax: "<percentage>"; inherits: false; initial-value: 130%; }
+@view-transition { navigation: auto; }                              /* weiches Überblenden beim Seitenwechsel */
+@media (prefers-reduced-motion: no-preference) {
+  /* gestaffelter Auftritt im Einstieg: Reihenfolge über --nr */
+  .auftritt { animation: auftritt 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: calc(var(--nr, 0) * 110ms); }
+  @keyframes auftritt { from { opacity: 0; transform: translateY(1.25rem); filter: blur(6px); } }
+
+  /* Aquarell blüht auf wie Farbe auf nassem Papier; danach schwebt das umgebende Element kaum merklich */
+  .aufbluehen { -webkit-mask-image: radial-gradient(circle at 58% 55%, #000 calc(var(--bluete) - 45%), transparent var(--bluete)); mask-image: radial-gradient(circle at 58% 55%, #000 calc(var(--bluete) - 45%), transparent var(--bluete)); animation: aufbluehen 2.2s cubic-bezier(0.25, 0.6, 0.2, 1) 0.15s both; }
+  @keyframes aufbluehen { from { --bluete: 0%; opacity: 0.2; filter: saturate(0.4) blur(5px); } 60% { opacity: 1; filter: saturate(1) blur(0); } }
+  .schweben { animation: schweben 11s ease-in-out infinite alternate; }
+  @keyframes schweben { from { transform: translate3d(0, 0.5%, 0) rotate(-0.4deg); } to { transform: translate3d(0, -1.2%, 0) rotate(0.5deg); } }
+
+  /* Szenenbild: wird beim Laden scharf und rückt an seinen Platz */
+  .entfalten { animation: entfalten 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  @keyframes entfalten { from { opacity: 0; scale: 1.05; filter: saturate(0.5) blur(10px); } }
+
+  /* beim Scrollen: nur wo der Browser es kann, sonst steht alles ruhig da */
+  @supports (animation-timeline: view()) {
+    .erscheinen { animation: erscheinen linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+    @keyframes erscheinen { from { opacity: 0; transform: translateY(2rem); } }
+    .mitziehen { animation: mitziehen linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
+    @keyframes mitziehen { to { transform: translateY(-4rem); } }
+  }
+}
+
+/* --- Druck ------------------------------------------------------------------------ */
+@media print {
+  .kopf { position: static; }
+  .kopf__wege, .sprung, .lavierung { display: none; }
+  body, .band { background: #fff; color: #000; }
+  .abschnitt { padding-block: 1.5rem; }
+}
+
+/* Reihenfolge für gestaffelte Auftritte */
+.nr-1 { --nr: 1; } .nr-2 { --nr: 2; } .nr-3 { --nr: 3; } .nr-4 { --nr: 4; } .nr-5 { --nr: 5; } .nr-6 { --nr: 6; }

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{Name · Angebot in einem Satzteil, mit Ort}}</title>
+<meta name="description" content="{{Zwei Sätze: wer, was, wo, wann geöffnet}}">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- MUSTER „buehne“: Laden und Gastronomie. Besucher wollen wissen: Ist offen? Wo? Was gibt es?
+     Übernimm Aufbau und Klassen genau so. Ersetze jede {…}-Stelle durch echte Angaben des Nutzers; lösche Zeilen und
+     Blöcke, für die es keine Angabe gibt (nichts erfinden). Die Zeilen der Überschrift: je höchstens 16 Zeichen. -->
+
+<a class="sprung" href="#inhalt">Zum Inhalt</a>
+<header class="kopf">
+  <div class="rahmen kopf__innen">
+    <a class="kopf__name" href="index.html">{{Name des Betriebs; nur wenn ein Schriftzug übernommen wird: <img src="assets/bilder/…" alt="Name" width="…" height="…">}}</a>
+    <nav class="kopf__wege" aria-label="Auf dieser Seite"><a href="#angebot">{{Angebot}}</a><a href="#kontakt">Zeiten und Weg</a></nav>
+    <a class="kopf__ruf" href="tel:{{+49…}}">{{Telefonnummer}}</a>
+  </div>
+</header>
+<main id="inhalt">
+  <section class="buehne">
+    <img class="buehne__bild entfalten" src="assets/bilder/{{szene}}.webp" srcset="assets/bilder/{{szene}}-klein.webp 800w, assets/bilder/{{szene}}.webp 1600w" sizes="100vw" alt="{{Bildbeschreibung aus dem Verzeichnis}}" width="1600" height="1067" fetchpriority="high">
+    <div class="rahmen">
+      <div class="buehne__text titel-raum">
+        <p class="status auftritt" data-status>{{Öffnungszeiten in einer Zeile}}</p>
+        <h1 class="titel auftritt nr-1"><span>{{Zeile 1}}</span><span>{{Zeile 2}}</span><span>{{Zeile 3, nur wenn nötig}}</span></h1>
+        <p class="gross auftritt nr-2">{{Ein Satz, höchstens 110 Zeichen: was es hier gibt und wo}}</p>
+        <div class="buehne__aktion auftritt nr-3">
+          <a class="ruf" href="tel:{{+49…}}"><span class="ruf__wort">{{Was der Anruf bringt, z. B. Tisch reservieren}}</span><span class="ruf__nummer">{{Telefonnummer}}</span></a>
+          <a class="knopf knopf--zweit" href="#angebot">{{Zum Angebot}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rahmen">
+    <dl class="auskunft auftritt nr-4">
+      <div><dt>Geöffnet</dt><dd>{{Tage}}<br>{{Uhrzeiten}}</dd></div>
+      <div><dt>Hier finden Sie uns</dt><dd>{{Straße Nr.}}<br>{{PLZ Ort}}</dd></div>
+      <!-- dritte Spalte nur mit einer kurzen, genannten Besonderheit; sonst löschen. Keine E-Mail-Adresse. -->
+      <div><dt>{{Dritte Auskunft, z. B. Reservierung}}</dt><dd>{{genannte Angabe, kurz}}</dd></div>
+    </dl>
+  </div>
+
+  <section class="abschnitt angebot" id="angebot">
+    <div class="rahmen raster">
+      <div class="angebot__kopf erscheinen">
+        <h2>{{Was es bei uns gibt}}</h2>
+      </div>
+      <img class="angebot__bild erscheinen" src="assets/bilder/{{stillleben}}.webp" alt="{{Bildbeschreibung aus dem Verzeichnis}}" width="1400" height="933" loading="lazy">
+      <ul class="tafel erscheinen" role="list">
+        <!-- drei bis sechs Einträge: ein Wort oder zwei groß, dahinter wenige Worte des Nutzers -->
+        <li><h3>{{Angebot 1}}</h3><p>{{wenige Worte dazu}}</p></li>
+        <li><h3>{{Angebot 2}}</h3><p>{{wenige Worte dazu}}</p></li>
+        <li><h3>{{Angebot 3}}</h3><p>{{wenige Worte dazu}}</p></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- Fotos: nur mit zwei bis sechs eigenen Fotos des Nutzers (aus dem Ordner fotos/, nach assets/bilder/ kopiert). Das beste zuerst, es steht groß.
+       Jedes Bild mit width="800" height="600" und beschreibendem alt; Bildunterschrift nur, wenn der Nutzer etwas dazu gesagt hat. Ohne eigene Fotos den ganzen Abschnitt löschen. -->
+  <section class="abschnitt" id="fotos">
+    <div class="rahmen">
+      <h2 class="erscheinen">{{Überschrift, z. B. Aus unserer Werkstatt}}</h2>
+      <ul class="galerie" role="list">
+        <li class="erscheinen"><figure><img src="assets/bilder/{{foto-1}}" alt="{{was zu sehen ist}}" width="800" height="600" loading="lazy"><figcaption>{{Bildunterschrift oder Zeile löschen}}</figcaption></figure></li>
+        <li class="erscheinen"><figure><img src="assets/bilder/{{foto-2}}" alt="{{was zu sehen ist}}" width="800" height="600" loading="lazy"></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Gut zu wissen: nur mit zwei bis vier Angaben des Nutzers (z. B. Rezept, Preise, Anfahrt, Hausbesuche). Links ein Stichwort, darunter ein kurzer Satz. Ohne solche Angaben den ganzen Abschnitt löschen. -->
+  <section class="abschnitt abschnitt--flaeche" id="wissen">
+    <div class="rahmen wissen">
+      <h2 class="erscheinen">Gut zu wissen</h2>
+      <dl class="erscheinen">
+        <div><dt>{{Stichwort 1}}</dt><dd>{{ein kurzer Satz des Nutzers}}</dd></div>
+        <div><dt>{{Stichwort 2}}</dt><dd>{{ein kurzer Satz des Nutzers}}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="abschnitt band" id="kontakt">
+    <div class="rahmen band__raster">
+      <div class="band__ruf erscheinen">
+        <h2>{{Kurze Überschrift zum Kontakt, z. B. Reservieren und vorbeikommen}}</h2>
+        <p><a class="band__nummer" href="tel:{{+49…}}">{{Telefonnummer}}</a></p>
+        <p><a href="mailto:{{E-Mail}}">{{E-Mail}}</a></p>
+      </div>
+      <div class="band__weg erscheinen">
+        <dl class="zeiten">
+          <!-- je genannter Zeitangabe eine Zeile. data-tage: 1 = Montag … 7 = Sonntag, Bereich als "2-7". data-von/data-bis nur an offenen Tagen ("9", "17.30") -->
+          <div data-tage="{{1-5}}" data-von="{{8}}" data-bis="{{18}}"><dt>{{Montag bis Freitag}}</dt><dd>{{8–18 Uhr}}</dd></div>
+        </dl>
+        <address class="ort"><strong>{{Name}}</strong><br>{{Straße Nr.}}<br>{{PLZ Ort}}</address>
+        <p><a class="knopf knopf--zweit" href="https://www.openstreetmap.org/search?query={{Adresse, URL-kodiert}}" rel="noopener">Auf der Karte ansehen</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="fuss">
+  <div class="rahmen fuss__innen klein">
+    <p>{{Name, verantwortliche Person}}</p>
+    <nav class="fuss__wege" aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+  </div>
+</footer>
+<script src="assets/seite.js" defer></script>
+</body>
+</html>

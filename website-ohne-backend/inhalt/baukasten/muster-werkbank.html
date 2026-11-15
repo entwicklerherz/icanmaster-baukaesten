@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{Name · Leistung in einem Satzteil, mit Ort}}</title>
+<meta name="description" content="{{Zwei Sätze: wer, was, wo, wann erreichbar}}">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- MUSTER „werkbank“: Handwerk und Arbeit vor Ort. Besucher wollen wissen: Was machen die? Kann ich denen das anvertrauen? Wie erreiche ich sie?
+     Übernimm Aufbau und Klassen genau so. Ersetze jede {…}-Stelle durch echte Angaben des Nutzers; lösche Zeilen und
+     Blöcke, für die es keine Angabe gibt (nichts erfinden). Die Zeilen der Überschrift: je höchstens 16 Zeichen. -->
+
+<a class="sprung" href="#inhalt">Zum Inhalt</a>
+<header class="kopf">
+  <div class="rahmen kopf__innen">
+    <a class="kopf__name" href="index.html">{{Name des Betriebs}}</a>
+    <nav class="kopf__wege" aria-label="Auf dieser Seite"><a href="#arbeiten">{{Was wir machen}}</a><a href="#kontakt">Kontakt und Weg</a></nav>
+    <a class="kopf__ruf" href="tel:{{+49…}}">{{Telefonnummer}}</a>
+  </div>
+</header>
+<main id="inhalt">
+  <section class="werkbank">
+    <div class="rahmen">
+      <div class="werkbank__kopf">
+        <div class="titel-raum"><h1 class="titel auftritt"><span>{{Zeile 1}}</span><span>{{Zeile 2}}</span></h1></div>
+        <div class="werkbank__seite auftritt nr-1">
+          <p class="gross">{{Ein Satz, höchstens 140 Zeichen: wer hier arbeitet und was entsteht}}</p>
+          <p><a class="ruf" href="tel:{{+49…}}"><span class="ruf__wort">{{Was der Anruf bringt, z. B. Vorhaben besprechen}}</span><span class="ruf__nummer">{{Telefonnummer}}</span></a></p>
+        </div>
+      </div>
+      <figure class="werkbank__bild auftritt nr-2">
+        <img class="entfalten" src="assets/bilder/{{szene}}.webp" srcset="assets/bilder/{{szene}}-klein.webp 800w, assets/bilder/{{szene}}.webp 1600w" sizes="(min-width: 90rem) 80rem, 92vw" alt="{{Bildbeschreibung aus dem Verzeichnis}}" width="1600" height="1067" fetchpriority="high">
+        <figcaption class="plakette"><strong>{{Straße Nr., Ort}}</strong><span data-status>{{Zeiten in einer Zeile}}</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="abschnitt" id="arbeiten">
+    <div class="rahmen werke">
+      <div class="werke__kopf stapel erscheinen">
+        <h2>{{Was wir machen}}</h2>
+        <!-- hier nur ein Satz, den der Nutzer so gesagt hat; kein Füllsatz. Sonst die Zeile löschen. -->
+        <p>{{Satz des Nutzers}}</p>
+      </div>
+      <ul class="werke__liste" role="list">
+        <!-- drei bis sechs Einträge; lange Wörter mit &shy; an der Fuge trennbar machen (Einbau&shy;schränke) -->
+        <li class="erscheinen"><h3>{{Leistung 1}}</h3><p>{{ein Satz dazu, nur Genanntes}}</p></li>
+        <li class="erscheinen"><h3>{{Leistung 2}}</h3><p>{{ein Satz dazu}}</p></li>
+        <li class="erscheinen"><h3>{{Leistung 3}}</h3><p>{{ein Satz dazu}}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Aussage: nur wenn der Nutzer etwas Eigenes genannt hat (Material, Herkunft, Haltung), höchstens sieben Wörter. Sonst den ganzen Abschnitt löschen. -->
+  <section class="aussage-band">
+    <div class="rahmen aussage">
+      <p class="erscheinen">{{Aussage des Nutzers, höchstens sieben Wörter}}</p>
+      <img class="erscheinen" src="assets/bilder/{{stillleben}}.webp" alt="{{Bildbeschreibung aus dem Verzeichnis}}" width="1400" height="933" loading="lazy">
+    </div>
+  </section>
+
+
+  <!-- Fotos: nur mit zwei bis sechs eigenen Fotos des Nutzers (aus dem Ordner fotos/, nach assets/bilder/ kopiert). Das beste zuerst, es steht groß.
+       Jedes Bild mit width="800" height="600" und beschreibendem alt; Bildunterschrift nur, wenn der Nutzer etwas dazu gesagt hat. Ohne eigene Fotos den ganzen Abschnitt löschen. -->
+  <section class="abschnitt" id="fotos">
+    <div class="rahmen">
+      <h2 class="erscheinen">{{Überschrift, z. B. Aus unserer Werkstatt}}</h2>
+      <ul class="galerie" role="list">
+        <li class="erscheinen"><figure><img src="assets/bilder/{{foto-1}}" alt="{{was zu sehen ist}}" width="800" height="600" loading="lazy"><figcaption>{{Bildunterschrift oder Zeile löschen}}</figcaption></figure></li>
+        <li class="erscheinen"><figure><img src="assets/bilder/{{foto-2}}" alt="{{was zu sehen ist}}" width="800" height="600" loading="lazy"></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Gut zu wissen: nur mit zwei bis vier Angaben des Nutzers (z. B. Rezept, Preise, Anfahrt, Hausbesuche). Links ein Stichwort, darunter ein kurzer Satz. Ohne solche Angaben den ganzen Abschnitt löschen. -->
+  <section class="abschnitt abschnitt--flaeche" id="wissen">
+    <div class="rahmen wissen">
+      <h2 class="erscheinen">Gut zu wissen</h2>
+      <dl class="erscheinen">
+        <div><dt>{{Stichwort 1}}</dt><dd>{{ein kurzer Satz des Nutzers}}</dd></div>
+        <div><dt>{{Stichwort 2}}</dt><dd>{{ein kurzer Satz des Nutzers}}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="abschnitt band" id="kontakt">
+    <div class="rahmen band__raster">
+      <div class="band__ruf erscheinen">
+        <h2>{{Kurze Überschrift zum Kontakt, z. B. Rufen Sie an}}</h2>
+        <p><a class="band__nummer" href="tel:{{+49…}}">{{Telefonnummer}}</a></p>
+        <p><a href="mailto:{{E-Mail}}">{{E-Mail}}</a></p>
+      </div>
+      <div class="band__weg erscheinen">
+        <dl class="zeiten">
+          <!-- je genannter Zeitangabe eine Zeile. data-tage: 1 = Montag … 7 = Sonntag, Bereich als "2-7". data-von/data-bis nur an offenen Tagen ("9", "17.30") -->
+          <div data-tage="{{1-5}}" data-von="{{8}}" data-bis="{{18}}"><dt>{{Montag bis Freitag}}</dt><dd>{{8–18 Uhr}}</dd></div>
+        </dl>
+        <address class="ort"><strong>{{Name}}</strong><br>{{Straße Nr.}}<br>{{PLZ Ort}}</address>
+        <p><a class="knopf knopf--zweit" href="https://www.openstreetmap.org/search?query={{Adresse, URL-kodiert}}" rel="noopener">Auf der Karte ansehen</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="fuss">
+  <div class="rahmen fuss__innen klein">
+    <p>{{Name, verantwortliche Person}}</p>
+    <nav class="fuss__wege" aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+  </div>
+</footer>
+<script src="assets/seite.js" defer></script>
+</body>
+</html>
