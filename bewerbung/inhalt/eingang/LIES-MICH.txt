@@ -1,0 +1,9 @@
+Hier hinein kommen Stellenanzeigen, die dein Agent auswerten soll:
+
+- Benachrichtigungen deiner Jobalarme, als gespeicherte E-Mail (Endung .eml)
+- einzelne Anzeigen als Text, HTML oder PDF
+
+Du kannst den Text einer Anzeige auch einfach im Gespräch einfügen.
+Danach sagst du deinem Agenten: „Neue Stellen“.
+
+Was ausgewertet ist, legt der Baukasten in den Unterordner „erledigt“.

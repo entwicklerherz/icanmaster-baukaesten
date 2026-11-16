@@ -1,0 +1,22 @@
+{
+  "stand": "2026-11-16",
+  "erklaerung": "Allgemeine Hinweise auf gesetzliche Regeln, keine Prüfung des einzelnen Vertrags. Die Texte nennen die Vorschrift und die Stelle, die im Einzelfall Auskunft gibt. Vor jeder neuen Fassung des Baukastens an den Quellen nachlesen.",
+  "hinweise": {
+    "verbrauchervertrag_2022": {
+      "titel": "Vertrag seit dem 1. März 2022 geschlossen",
+      "text": "Für viele Verträge, die Verbraucher seit dem 1. März 2022 geschlossen haben, gelten strengere Regeln für die Bedingungen des Anbieters: Eine stillschweigende Verlängerung ist danach nur auf unbestimmte Zeit zulässig, mit einem Kündigungsrecht von höchstens einem Monat, und die Kündigungsfrist zum Ende der ersten Laufzeit darf höchstens einen Monat betragen (§ 309 Nummer 9 BGB; ausgenommen sind unter anderem Versicherungsverträge). Ob das für diesen Vertrag gilt, sagt dir die Verbraucherzentrale oder eine Rechtsberatung. Diese Übersicht rechnet mit dem, was im Vertrag steht.",
+      "quelle": "https://www.gesetze-im-internet.de/bgb/__309.html",
+      "uebergang": "https://www.gesetze-im-internet.de/bgbeg/art_229__60.html"
+    },
+    "telekommunikation": {
+      "titel": "Mobilfunk, Festnetz, Internet",
+      "text": "Bei Verträgen über Telekommunikationsdienste können Verbraucher nach Ablauf der anfänglichen Laufzeit jederzeit mit einer Frist von einem Monat kündigen, wenn sich der Vertrag stillschweigend verlängert hat (§ 56 Absatz 3 TKG). Im Einzelfall gibt die Verbraucherzentrale oder die Bundesnetzagentur Auskunft. Diese Übersicht rechnet mit dem, was im Vertrag steht.",
+      "quelle": "https://www.gesetze-im-internet.de/tkg_2021/__56.html"
+    },
+    "kuendigungsbutton": {
+      "titel": "Kündigen auf der Website",
+      "text": "Lässt sich ein Vertrag auf der Website des Anbieters abschließen, muss der Anbieter dort seit dem 1. Juli 2022 auch eine Kündigung über eine Schaltfläche ermöglichen (§ 312k BGB). Heb in jedem Fall die Bestätigung auf.",
+      "quelle": "https://www.gesetze-im-internet.de/bgb/__312k.html"
+    }
+  }
+}

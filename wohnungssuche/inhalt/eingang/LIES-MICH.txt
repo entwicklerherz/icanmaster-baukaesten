@@ -1,0 +1,9 @@
+Hier hinein kommt alles, was dein Agent auswerten soll:
+
+- Benachrichtigungen deiner Suchaufträge, als gespeicherte E-Mail (Endung .eml)
+- einzelne Anzeigen oder Exposés als Text, HTML oder PDF
+
+Du kannst den Text einer Benachrichtigung auch einfach im Gespräch einfügen.
+Danach sagst du deinem Agenten: „Neue Angebote“.
+
+Was ausgewertet ist, legt der Baukasten in den Unterordner „erledigt“.

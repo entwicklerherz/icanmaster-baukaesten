@@ -1,0 +1,12 @@
+Hier hinein kommt alles, was dein Agent zu deinen Verträgen auswerten soll:
+
+- Verträge und Vertragsbestätigungen
+- Rechnungen und Beitragsmitteilungen
+- Schreiben über Preisänderungen, Kündigungsbestätigungen
+
+Als gespeicherte E-Mail (Endung .eml), als Text, HTML oder PDF. Papier fotografierst oder scannst du;
+du kannst den Text eines Schreibens auch einfach im Gespräch einfügen.
+Danach sagst du deinem Agenten: „Neue Unterlagen“.
+
+Kontoauszüge, Passwörter und Zugangsdaten gehören nicht hierher.
+Was ausgewertet ist, legt der Baukasten in den Unterordner „erledigt“.
