@@ -1,0 +1,68 @@
+{
+  "hinweis_zur_sprache": "Die Buchungsseite ist deutsch. Das ist eine bewusste Festlegung für Betriebe in Deutschland (Impressum und Datenschutzseite folgen deutschen Vorgaben). Die Texte unten erscheinen so auf der Seite; schreibe sie auf Deutsch.",
+  "name": "Muster-Betrieb",
+  "einleitung": "Hier buchen Sie Ihren Termin. Wählen Sie einen Tag und eine Uhrzeit.",
+  "leistungen": [
+    "Erstgespräch",
+    "Folgetermin"
+  ],
+  "termin_minuten": 30,
+  "zeitzone": "Europe/Berlin",
+  "zeiten": {
+    "mo": [
+      [
+        "09:00",
+        "12:00"
+      ],
+      [
+        "14:00",
+        "17:00"
+      ]
+    ],
+    "di": [
+      [
+        "09:00",
+        "12:00"
+      ],
+      [
+        "14:00",
+        "17:00"
+      ]
+    ],
+    "mi": [
+      [
+        "09:00",
+        "12:00"
+      ]
+    ],
+    "do": [
+      [
+        "09:00",
+        "12:00"
+      ],
+      [
+        "14:00",
+        "17:00"
+      ]
+    ],
+    "fr": [
+      [
+        "09:00",
+        "12:00"
+      ]
+    ],
+    "sa": [],
+    "so": []
+  },
+  "vorlauf_stunden": 12,
+  "tage_im_voraus": 28,
+  "aufbewahrung_tage": 30,
+  "hinweis_nach_buchung": "Wenn Sie den Termin nicht wahrnehmen können, sagen Sie ihn bitte über diese Seite ab.",
+  "rechtliches": {
+    "verantwortlich": "",
+    "anschrift": "",
+    "telefon": "",
+    "email": "",
+    "weitere_angaben": ""
+  }
+}

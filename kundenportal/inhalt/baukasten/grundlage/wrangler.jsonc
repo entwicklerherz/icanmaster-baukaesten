@@ -1,0 +1,12 @@
+{
+  // Einstellungen für Cloudflare. NAME und DATENBANK-ID trägt der Agent beim Bereitstellen ein.
+  "name": "kundenportal",
+  "main": "src/app.mjs",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  // Einmal täglich (02:41 Uhr Weltzeit) räumt das Programm abgelaufene Einträge weg.
+  "triggers": { "crons": ["41 2 * * *"] },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "kundenportal", "database_id": "HIER-DIE-DATENBANK-ID" }
+  ]
+}

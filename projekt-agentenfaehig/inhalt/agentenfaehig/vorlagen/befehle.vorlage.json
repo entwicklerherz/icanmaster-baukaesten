@@ -1,0 +1,11 @@
+{
+  "stand": "JJJJ-MM-TT",
+  "befehle": {
+    "abhaengigkeiten": { "befehl": "", "ergebnis": "nicht_vorhanden", "notiz": "" },
+    "build": { "befehl": "", "ergebnis": "nicht_vorhanden", "notiz": "" },
+    "tests": { "befehl": "", "ergebnis": "nicht_vorhanden", "notiz": "" },
+    "einzelner_test": { "befehl": "", "ergebnis": "nicht_vorhanden", "notiz": "" },
+    "lint": { "befehl": "", "ergebnis": "nicht_vorhanden", "notiz": "" },
+    "typpruefung": { "befehl": "", "ergebnis": "nicht_vorhanden", "notiz": "" }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  // Einstellungen für Cloudflare. NAME und DATENBANK-ID trägt der Agent beim Bereitstellen ein.
+  "name": "terminbuchung",
+  "main": "src/app.mjs",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  // Einmal täglich (02:23 Uhr Weltzeit) räumt das Programm abgelaufene Buchungen weg.
+  "triggers": { "crons": ["23 2 * * *"] },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "terminbuchung", "database_id": "HIER-DIE-DATENBANK-ID" }
+  ]
+}

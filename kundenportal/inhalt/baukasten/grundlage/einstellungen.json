@@ -1,0 +1,24 @@
+{
+  "hinweis_zur_sprache": "Das Kundenportal ist deutsch. Das ist eine bewusste Festlegung für Betriebe in Deutschland (Impressum und Datenschutzseite folgen deutschen Vorgaben). Die Texte unten erscheinen so auf den Seiten; schreibe sie auf Deutsch.",
+  "name": "Muster-Betrieb",
+  "begruessung": "Hier sehen Sie den Stand Ihres Auftrags, Ihre Termine und Ihre Unterlagen.",
+  "wort_kunde": "Kunde",
+  "wort_kunden": "Kunden",
+  "wort_vorgang": "Auftrag",
+  "stufen": [
+    "Anfrage",
+    "Angebot",
+    "In Arbeit",
+    "Abgeschlossen"
+  ],
+  "erreichbar": "Fragen? Rufen Sie uns an oder schreiben Sie uns.",
+  "zeitzone": "Europe/Berlin",
+  "aufbewahrung_tage": 90,
+  "rechtliches": {
+    "verantwortlich": "",
+    "anschrift": "",
+    "telefon": "",
+    "email": "",
+    "weitere_angaben": ""
+  }
+}
