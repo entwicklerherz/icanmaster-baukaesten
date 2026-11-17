@@ -50,6 +50,8 @@ Kostenlos für eigene Vorhaben und Kundenvorhaben, privat wie geschäftlich; anp
 
 ## Mehr lernen
 
+Wie arbeitet ein Coding-Agent? Bei [Agent live](https://icanmaster.ai/live/) kannst du kostenlos zusehen und Fragen stellen. Dort siehst du, ob gerade ein Termin zur Anmeldung offen ist.
+
 Im Workshop „Deine App. Heute live.“ führst du einen Agenten selbst: Aufträge geben, Ergebnisse prüfen, nachbessern. Termine: <https://icanmaster.ai/seminare/>
 
 Neue Baukästen per E-Mail: <https://icanmaster.ai/erinnerung/>
